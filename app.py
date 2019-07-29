@@ -12,7 +12,7 @@ from keras.models import load_model
 from keras.preprocessing import image
 import tensorflow as tf
 # Flask utils
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, redirect, url_for, request, render_template, jsonify
 from werkzeug.utils import secure_filename
 #from gevent.wsgi import WSGIServer
 
@@ -59,6 +59,8 @@ def index():
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
+        data = {"success": 0}
+
         # Get the file from post request
         f = request.files['file']
 
@@ -73,13 +75,15 @@ def upload():
         os.remove(file_path)#removes file from the server after prediction has been returned
 
         # Arrange the correct return according to the model. 
-		# In this model 1 is Pneumonia and 0 is Normal.
-        return np.array2string(preds)
-    return None
+        data['probability'] = preds.tolist()[0]
+        data['success'] = 1
+
+    return jsonify(data)
+
 
     #this section is used by gunicorn to serve the app on Heroku
 if __name__ == '__main__':
-        app.run(host='0.0.0.0', port=80)
+        app.run(host='0.0.0.0', port=8000)
     #uncomment this section to serve the app locally with gevent at:  http://localhost:5000
     # Serve the app with gevent 
     #http_server = WSGIServer(('', 5000), app)

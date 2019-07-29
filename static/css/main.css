@@ -8,6 +8,10 @@
     margin-bottom: 1em;    
 }
 
+#footer {
+    background-color: #C20324;
+}
+
 .navbar {
     background-color: #C20324;
     color:#C20324;
@@ -16,22 +20,16 @@
 }
 
 .img-preview>div {
-    width: 100%;
+    width: 50%;
     height: 100%;
     background-size: 256px 256px;
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
     align-self: center;
-
+    margin: 0 auto;
 }
 
-
-#imagePreview{
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-block;
-}
 
 
 #predict{
@@ -41,6 +39,7 @@
 }
 #btn-predict{
     background-color: #C20324;
+    color: #C20324;
 
 }
 
@@ -77,8 +76,8 @@ input[type="file"] {
 }
 
 .loader {
-    border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #3498db; /* Blue */
+    border: 8px solid  #C20324; /* Light grey */
+    border-top: 8px solid #C20324; /* Blue */
     border-radius: 50%;
     width: 50px;
     height: 50px;

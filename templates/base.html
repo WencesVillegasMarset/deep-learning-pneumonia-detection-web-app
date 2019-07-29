@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pneumonia Detection Web App</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
@@ -13,23 +14,30 @@
     <link rel='icon' href="{{ url_for('static', filename='favicon.ico') }}" type='image/x-icon'/ >   
 </head>
 
-<body>
+<body style="background-color: #E9E9E9">
     <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" style="color: white" href="#">Pneumonia Detection</a>
-            <a href="#" class="pull-right"><img id="dsu_logo" src="/static/dsu_white.png"></a> 
-           <!--  <a href="#" class="pull-right"><img src="/path/to/image.png"></a>--> 
-
-
+            <a href="http://dongseo.ac.kr" class="pull-right"><img id="dsu_logo" src="/static/dsu_white.png"></a> 
         </div>
     </nav>
     <div class="container">
-        <div id="content" style="margin-top:2em">{% block content %}{% endblock %}</div>
+        <div id="content" style="margin-top:2em ; background-color: #E9E9E9">{% block content %}{% endblock %}</div>
     </div>
 </body>
 
-<footer>
+<!-- Footer -->
+<footer class="page-footer font-small" style="background-color: #C20324">
     <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>    
-</footer>
-
+    <!-- Footer Links -->
+    
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="color:white "> @ 2019  
+      <a href="http://www.studyinkorea.go.kr/en/sub/gks/africanlatinamerican.do" style="color:white "> Global Korea Scholarship</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
 </html>

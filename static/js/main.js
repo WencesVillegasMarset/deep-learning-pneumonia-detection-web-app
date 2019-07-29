@@ -40,15 +40,17 @@ $(document).ready(function () {
             contentType: false,
             cache: false,
             processData: false,
+            dataType: "json",
             async: true,
             success: function (data) {
                 // Get and display the result
                 $('.loader').hide();
+                // TODO : FIX THIS JSON SHIT
                 $('#result').fadeIn(600);
-                $('#result').text(' Result:  ' + data);
+                var result = $.parseJSON(data)
+                $('#result').text(' Probability:  ');
                 console.log('Success!');
-                console.log(data);
-
+                console.log(result);
             },
         });
     });
