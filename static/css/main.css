@@ -26,8 +26,18 @@
 
 }
 
+
+#imagePreview{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+
 #predict{
     text-align: center;
+    align-self: center;
+
 }
 #btn-predict{
     background-color: #C20324;
@@ -46,6 +56,10 @@ input[type="file"] {
     font-size: 1em;
     transition: all .4s;
     cursor: pointer;
+}
+.image-section{
+    text-align: center;
+
 }
 
 #uploadButton{
