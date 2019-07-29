@@ -10,11 +10,11 @@ import numpy as np
 from keras.applications.imagenet_utils import preprocess_input, decode_predictions
 from keras.models import load_model
 from keras.preprocessing import image
-
+import tensorflow as tf
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
 from werkzeug.utils import secure_filename
-from gevent.wsgi import WSGIServer
+#from gevent.wsgi import WSGIServer
 
 # Define a flask app
 app = Flask(__name__)
@@ -23,7 +23,11 @@ app = Flask(__name__)
 MODEL_PATH = 'models/trained_model.h5'
 
 #Load your trained model
+global model
 model = load_model(MODEL_PATH)
+#guardamos el grafo por defecto de tensorflow por errores del backend, no se tendria que hacer en situaciones normales
+global graph
+graph = tf.get_default_graph()
 #model._make_predict_function()          # Necessary to make everything ready to run on the GPU ahead of time
 print('Model loaded. Start serving...')
 
@@ -41,8 +45,8 @@ def model_predict(img_path, model):
     img = image.img_to_array(img)
     img = np.expand_dims(img, axis=0)
 
-   
-    preds = model.predict(img)
+    with graph.as_default():
+            preds = model.predict(img)
     return preds
 
 
@@ -70,12 +74,7 @@ def upload():
 
         # Arrange the correct return according to the model. 
 		# In this model 1 is Pneumonia and 0 is Normal.
-        str1 = 'Pneumonia'
-        str2 = 'Normal'
-        if preds == 1:
-            return str1
-        else:
-            return str2
+        return np.array2string(preds)
     return None
 
     #this section is used by gunicorn to serve the app on Heroku

@@ -47,6 +47,8 @@ $(document).ready(function () {
                 $('#result').fadeIn(600);
                 $('#result').text(' Result:  ' + data);
                 console.log('Success!');
+                console.log(data);
+
             },
         });
     });

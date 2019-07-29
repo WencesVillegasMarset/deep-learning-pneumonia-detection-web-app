@@ -8,12 +8,30 @@
     margin-bottom: 1em;    
 }
 
+.navbar {
+    background-color: #C20324;
+    color:#C20324;
+    background-image: none;
+    background-repeat: no-repeat;
+}
+
 .img-preview>div {
     width: 100%;
     height: 100%;
     background-size: 256px 256px;
     background-repeat: no-repeat;
     background-position: center;
+    text-align: center;
+    align-self: center;
+
+}
+
+#predict{
+    text-align: center;
+}
+#btn-predict{
+    background-color: #C20324;
+
 }
 
 input[type="file"] {
@@ -23,16 +41,25 @@ input[type="file"] {
 .upload-label{
     display: inline-block;
     padding: 12px 30px;
-    background: #39D2B4;
+    background: #9A8874;
     color: #fff;
     font-size: 1em;
     transition: all .4s;
     cursor: pointer;
 }
 
+#uploadButton{
+    text-align: center;
+}
+
 .upload-label:hover{
-    background: #34495E;
-    color: #39D2B4;
+    background: rgb(138, 122, 104);
+    color: white;
+}
+
+#dsu_logo{
+    width: 105px;
+    height: 70px;
 }
 
 .loader {

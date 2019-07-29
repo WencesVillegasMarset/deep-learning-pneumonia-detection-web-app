@@ -8,9 +8,11 @@ This web application is based on a 2-layer convolutional neural network (CNN), t
 
 <div>
     <form id="upload-file" method="post" enctype="multipart/form-data">
-        <label for="imageUpload" class="upload-label">
-            Select Image
-        </label>
+        <div id="uploadButton">
+            <label for="imageUpload" class="upload-label">
+                Select Image
+            </label>
+        </div>
         <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
     </form>
 
@@ -19,7 +21,7 @@ This web application is based on a 2-layer convolutional neural network (CNN), t
             <div id="imagePreview">
             </div>
         </div>
-        <div>
+        <div id="predict">
             <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
         </div>
     </div>
