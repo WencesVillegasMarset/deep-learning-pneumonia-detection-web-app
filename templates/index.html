@@ -6,7 +6,7 @@
 <h2 style="text-align: center">Pneumonia detection based on Convolutional Neural Networks
     </h2>
 
-    <h4 style="text-align: center">Upload a picture of your chest X-Ray
+    <h4 style="text-align: center">Upload an image of a frontal chest X-Ray
         </h4>
 
 <div>
@@ -18,32 +18,200 @@
         </div>
         <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
     </form>
-
-    <div class="image-section" style="display:none;">
-        <div class="img-preview">
-            <div id="imagePreview">
+    <div id="containerDinamico">
+        <div class="image-section" style="display:none;">
+            <div class="img-preview">
+                <div id="imagePreview">
+                </div>
+            </div>
+            <div id="predict">
+                <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
             </div>
         </div>
-        <div id="predict">
-            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
-        </div>
+
+        
     </div>
+    <div id="containerResult">
+        <div class="loader" style="display:none; color: #C20324"></div>
 
-    <div class="loader" style="display:none;"></div>
-
-    <h3 id="result">
-        <span> </span>
-    </h3>
+        <h3 id="result">
+            <span> </span>
+        </h3>
+    </div>
+        
 
 </div>
 NOTES
 <ul>
 <li>This deep learning model has been trained and validated, using the following dataset: <a href="https://data.mendeley.com/datasets/rscbjbr9sj/2">Kermany Daniel, Zhang Kang, Goldbaum Michael (2018). Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images for Classification. Mendeley Data, v2, http://dx.doi.org/10.17632/rscbjbr9sj.2</a></li>
 <li><b style="color:red;">The suitability of this deep learning model for clinical use has not been validated. Therefore it cannot be used for any clinical purpose! It can be used for research purposes and for comparison with other similar models.</b></li>
-<li>This web application has been created using code developed by Xin Fu (please see the following repository: </h2><a href="https://github.com/mtobeiyf/keras-flask-deploy-webapp">https://github.com/mtobeiyf/keras-flask-deploy-web-app</a></li>
-<li>The final code for this specific web app along with the trained model data can be found in the following repository: </h2><a href="https://github.com/tberris/deep-learning-pneumonia-detection-web-app">https://github.com/tberris/deep-learning-pneumonia-detection-web-app</a></li>
-<li>For any comments or suggestions please contact Theocharis Berris at: theocharisberris@gmail.com</li>
+<li>The final code for this specific web app along with the trained model can be found in </h2><a href="https://github.com/tberris/deep-learning-pneumonia-detection-web-app">GitHub</a></li>
+<li>Please reach to a specialist <a href="http://google.com/#q=hospitals+near+me" target="_blank">near you</a></li>
 </ul>
+<section id="team" class="pb-5">
+        <div class="container">
+            <h5 class="section-title h3" >Our Team</h5>
+            <div class="row">
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="" alt="card image"></p>
+                                        <h4 class="card-title">Andre Nadal</h4>
+                                        <p class="card-text">Brazil</p>
+                                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Andre Nadal</h4>
+                                        <p class="card-text">Big Dick.Big Dick.Big Dick.</p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/andre-nadal-rodrigues-b3b277131">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                    <i class="fa fa-envelope"></i>
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="static/axel.jpeg" alt="card image"></p>
+                                        <h4 class="card-title">Axel Aguerreberry</h4>
+                                        <p class="card-text">Argentina</p>
+                                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Axel Aguerreberry</h4>
+                                        <p class="card-text">Big Dick.Big Dick.Big Dick.</p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="linkedin.com/in/axel-aguerreberry-a11345160">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="mailto:axel.aguerreberry@gmail.com">
+                                                    <i class="fa fa-envelope"></i>
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_03.png" alt="card image"></p>
+                                        <h4 class="card-title">Luis H. Ribeiro</h4>
+                                        <p class="card-text">Brazil</p>
+                                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Luis H. Ribeiro</h4>
+                                        <p class="card-text">Big Dick.Big Dick.Big Dick.</p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/luis-henrique-simplicio-ribeiro-306604100">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                    <i class="fa fa-envelope"></i>
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+                <!-- Team member -->
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="static/wences.jpeg" alt="card image"></p>
+                                        <h4 class="card-title">Wenceslao Villegas</h4>
+                                        <p class="card-text">Argentina</p>
+                                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <h4 class="card-title">Wenceslao Villegas</h4>
+                                        <p class="card-text">Student Researcher at <a href="http://dharma.frm.utn.edu.ar/perfil/wvillegas">DHARMa</a> AI Laboratory. <br>Co-Founder at <a href="https://accessgo.com.ar/"> AccessGo</a> <br>  Systems Engineering Student at UTN-FRM </p>
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/wenceslao-villegas/">
+                                                    <i class="fa fa-linkedin"></i>
+                                                </a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="mailto:villegaswences@gmail.com">
+                                                    <i class="fa fa-envelope"></i>
+                                                </a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ./Team member -->
+    
+            </div>
+        </div>
+    </section>
 </body>
 
 {% endblock %}

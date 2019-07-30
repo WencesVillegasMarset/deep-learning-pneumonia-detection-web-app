@@ -20,7 +20,7 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 # Model saved with Keras model.save()
-MODEL_PATH = 'models/trained_model.h5'
+MODEL_PATH = 'models/vgg16_chestXray.h5'
 
 #Load your trained model
 global model
@@ -39,7 +39,7 @@ print('Model loaded. Start serving...')
 
 
 def model_predict(img_path, model):
-    img = image.load_img(img_path, target_size=(64, 64)) #target_size must agree with what the trained model expects!!
+    img = image.load_img(img_path, target_size=(150, 150)) #target_size must agree with what the trained model expects!!
 
     # Preprocessing the image
     img = image.img_to_array(img)
@@ -59,7 +59,7 @@ def index():
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
-        data = {"success": 0}
+        data = False
 
         # Get the file from post request
         f = request.files['file']
@@ -75,10 +75,9 @@ def upload():
         os.remove(file_path)#removes file from the server after prediction has been returned
 
         # Arrange the correct return according to the model. 
-        data['probability'] = preds.tolist()[0]
-        data['success'] = 1
+        data = str((np.around(preds.tolist()[0], decimals=6))[0])
 
-    return jsonify(data)
+    return (data)
 
 
     #this section is used by gunicorn to serve the app on Heroku

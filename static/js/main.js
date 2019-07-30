@@ -47,10 +47,8 @@ $(document).ready(function () {
                 $('.loader').hide();
                 // TODO : FIX THIS JSON SHIT
                 $('#result').fadeIn(600);
-                var result = $.parseJSON(data)
-                $('#result').text(' Probability:  ');
+                $('#result').text(' Predicted Probability:  ' + parseFloat(data)*100 + '%');
                 console.log('Success!');
-                console.log(result);
             },
         });
     });
